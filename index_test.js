@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var GrauRivalidade = require("./src/GrauRivalidade");
+var GrauRivalidade = require("./server/GrauRivalidade");
 
 const configuracoes = {
     peso_adicional:{
@@ -25,9 +25,9 @@ let grau_cor_x_san = new GrauRivalidade(data_cor_x_san, "cor_x_san"); // , confi
 let resultado_cor_x_san = grau_cor_x_san.calcular();
 
 if(resultado_cor_x_pal > resultado_cor_x_san){
-    console.log("A rivalidade entre corinthians e palmeiras ("+resultado_cor_x_pal*100+"%) é maior que a rivalidade entre corinthians e santos ("+resultado_cor_x_san*100+"%)");
+    console.log("A rivalidade entre corinthians e palmeiras ("+resultado_cor_x_pal+"%) é maior que a rivalidade entre corinthians e santos ("+resultado_cor_x_san+"%)");
 } else {
-    console.log("A rivalidade entre corinthians e santos ("+resultado_cor_x_san*100+"%) é maior que a rivalidade entre corinthians e palmeiras ("+resultado_cor_x_pal*100+"%)");
+    console.log("A rivalidade entre corinthians e santos ("+resultado_cor_x_san+"%) é maior que a rivalidade entre corinthians e palmeiras ("+resultado_cor_x_pal+"%)");
 }
 
 

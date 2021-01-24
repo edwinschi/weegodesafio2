@@ -7,8 +7,13 @@ module.exports = class GrauRivalidade {
         this.configuracoes = configuracoes;        
         this.dados = dados;
 
+        
         this.arquivo_log_nome = "log_"+titulo+"_"+Date.now()+".txt";
         this.arquivo_log = "logs/"+this.arquivo_log_nome;
+
+        if (!fs.existsSync("./logs")){
+            fs.mkdirSync("./logs");
+        }
 
         fs.openSync("./"+this.arquivo_log, "w+");
     }

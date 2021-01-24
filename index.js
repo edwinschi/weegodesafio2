@@ -6,25 +6,29 @@ const path = require('path');
 
 const GrauRivalidade = require("./server/GrauRivalidade");
 
+app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.urlencoded());
+app.use(express.json()); 
+
 app.get('/', (req, res) => {
 
     res.sendFile(path.join(__dirname + '/public/index.html'));    
 })
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.post('/get-grau-rivalidade', (req, res) => {
+        
+    let titulo = req.body.origemdados;
+    let configuracoes = req.body.configuracoes?req.body.configuracoes:null;
 
-app.get('/getGraurivalidade/:origemdados', (req, res) => {
-    
-    let titulo = req.params.origemdados;
     let dados = fs.readFileSync('./data/data_'+titulo+'.json');
     let json_dados = JSON.parse(dados);
-    let grauObj = new GrauRivalidade(json_dados, titulo ); //, configuracoes
+    let grauObj = new GrauRivalidade(json_dados, titulo, configuracoes);
     let resultado = grauObj.calcular();
 
     res.json({ resultado, log: grauObj.getLog(), titulo });
 })
 
-app.get('/getlog/:file(*)', function(req, res, next){
+app.get('/get-log/:file(*)', function(req, res, next){
     var filePath = path.join(__dirname, 'logs', req.params.file);
   
     res.download(filePath, function (err) {

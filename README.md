@@ -36,11 +36,12 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">O desafio</a>
-      <a href="#about-the-project">Solução proposta</a>
+    <li>      
       <ul>
-        <li><a href="#built-with">Feito com</a></li>
+        <a href="#o-desafio">O desafio</a>
+      </ul>
+      <ul>
+        <a href="#solucao-proposta">Solução proposta</a>
       </ul>
     </li>
     <li>
@@ -50,25 +51,19 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## O Desafio
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Dado o cenário onde, times de futebol possuem diferentes graus de rivalidade entre si, construa um algoritmo que valide a hipótese de que o Corinthians possui uma rivalidade maior com o Palmeiras do que com o Santos.
 
-### Built With
+### Solucao Proposta
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Bootstrap](https://getbootstrap.com)

@@ -13,6 +13,11 @@
       </ul>
       <ul>
         <a href="#solucao-proposta">Solução proposta</a>
+        <ul>
+            <li><a href="#solucao-exemplo-1">Exemplo 1</a></li>
+            <li><a href="#solucao-exemplo-2">Exemplo 2</a></li>
+            <li><a href="#peso-adicional">Peso Adicional (Rodadas e/ou Campeonatos mais relevantes)</a></li>            
+        </ul>
       </ul>
       <ul>
         <a href="#origem-dados">Origem dos dados</a>
@@ -39,25 +44,25 @@ Dado o cenário onde, times de futebol possuem diferentes graus de rivalidade en
 
 A solução proposta parte da premissa base que o grau de rivalidade entre dois time é 100% quando a porcentagem de vitória/derrota está em 50% descontando os empates
 
+### Solucao Exemplo 1
 Exemplo 1:
 
 Corinthians e Palmeiras jogaram 100 vezes , onde 40 vitorias para o conrinthians e 40 para o palmeira e 20 empates:
 
 Assim o corintthians tem 40 pontos acumulados (1 por vitoria)
 
-porcentagem de resultados = 40/(100-20); // calcula a porcentagem de vitorias do corinthians
+porcentagem de resultados = 40/(100-20)
 porcentagem de resultados = 0.5;
 
 grau de rivalidade = 0.5*2
 grau de rivalidade = 1 ou 100%
 
 
-Exemplo 2:
+### Solucao Exemplo 2
 
 Corinthians e Palmeiras jogaram 100 vezes , onde 60 vitorias para o conrinthians e 40 para o palmeiras:
 
-
-porcentagem de resultados = 60/(100); // calcula a porcentagem de vitorias do corinthian
+porcentagem de resultados = 60/(100)
 porcentagem de resultados = 0.6
 
 se a porcentagem de vitorias for maior que 0.5 utilizamos a porcentagem de vitórias do palmeiras (0.4)
@@ -66,26 +71,28 @@ grau de rivalide = 0.4*2
 grau de rivaldiade = 0.8 ou 80%
 
 Ou seja , quanto mais proximo de 50% de pontos para cada time , maior o grau de rivalidade.
-    
+
+### Peso Adicional
+
 Porém como o grau de rivalidade entre times é algo subjetivo , adiconei a possibilidade de configurar o valor de cada jogo dependendo da etapa ou campeonato:
 
 Exemplo de configuração:
 
 ```json
 configuracoes = {
-    peso_adicional: {
-        rodadas: {
+    "peso_adicional": {
+        "rodadas": {
             "F": 1.5, //final
             "SF": 1 //semi-final 
         },
-        campeonatos: {
+        "campeonatos": {
             "libertadores": 10
         }
     }
 }
 ```
 
-nesse exemplo, jogos que são finais terao um peso adicionar de 1.5 , totalizando 2.5 (1 da vitoria + 1.5) pontos no calculo, 2 para a semifinal e para jogos da libertarores 11 pontos.
+Nesse exemplo, jogos que são finais terao um peso adicionar de 1.5 , totalizando 2.5 (1 da vitoria + 1.5) pontos no calculo, 2 para a semifinal e para jogos da libertarores 11 pontos.
 
 Algoritimo de cálculos: /server/GrauRivalidade.js
 

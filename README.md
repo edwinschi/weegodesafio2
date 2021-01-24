@@ -1,36 +1,7 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
-<!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <h3 align="center">Weego - Desafio 2</h3>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -42,6 +13,9 @@
       </ul>
       <ul>
         <a href="#solucao-proposta">Solução proposta</a>
+      </ul>
+      <ul>
+        <a href="#origem-dados">Origem dos dados</a>
       </ul>
     </li>
     <li>
@@ -59,126 +33,81 @@
 <!-- ABOUT THE PROJECT -->
 ## O Desafio
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Dado o cenário onde, times de futebol possuem diferentes graus de rivalidade entre si, construa um algoritmo que valide a hipótese de que o Corinthians possui uma rivalidade maior com o Palmeiras do que com o Santos.
 
-### Solucao Proposta
+## Solucao Proposta
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+A solução proposta parte da premissa base que o grau de rivalidade entre dois time é 100% quando a porcentagem de vitória/derrota está em 50% descontando os empates
+
+Exemplo 1:
+
+Corinthians e Palmeiras jogaram 100 vezes , onde 40 vitorias para o conrinthians e 40 para o palmeira e 20 empates:
+
+Assim o corintthians tem 40 pontos acumulados (1 por vitoria)
+
+porcentagem de resultados = 40/(100-20); // calcula a porcentagem de vitorias do corinthians
+porcentagem de resultados = 0.5;
+
+grau de rivalidade = 0.5*2
+grau de rivalidade = 1 ou 100%
 
 
+Exemplo 2:
+
+Corinthians e Palmeiras jogaram 100 vezes , onde 60 vitorias para o conrinthians e 40 para o palmeiras:
+
+
+porcentagem de resultados = 60/(100); // calcula a porcentagem de vitorias do corinthian
+porcentagem de resultados = 0.6
+
+se a porcentagem de vitorias for maior que 0.5 utilizamos a porcentagem de vitórias do palmeiras (0.4)
+
+grau de rivalide = 0.4*2;
+grau de rivaldiade = 0.8 ou 80%
+
+Ou seja , quanto mais proximo de 50% de pontos para cada time , maior o grau de rivalidade.
+    
+Porém como o grau de rivalidade entre times é algo subjetivo , adiconei a possibilidade de configurar o valor de cada jogo dependendo da etapa ou campeonato:
+
+Exemplo de configuração:
+
+configuracoes = {
+    peso_adicional: {
+        rodadas: {
+            "F": 1.5, //final
+            "SF": 1 //semi-final 
+        },
+        campeonatos: {
+            "libertadores": 10
+        }
+    }
+}
+
+nesse exemplo, jogos que são finais terao um peso adicionar de 1.5 , totalizando 2.5 (1 da vitoria + 1.5) pontos no calculo, 2 para a semifinal e para jogos da libertarores 11 pontos.
+
+Algoritimo de cálculos: /server/GrauRivalidade.js
+
+## Origem Dados
+
+Os dados obtidos para os testes nesse desafio foram obtidos do site:
+
+    https://www.ogol.com.br/confronto_equipas.php
+
+Para obter os dados que eram em tabela html em um formato em json com uma estrutura para realizar os cálculos, criei um algoritimo em jQuery (utilizado pelo site).
+
+   código em /server/CrawlerCode.js
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+1. Node (v12.18.3)
+2. Npm (6.14.6)
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+1. git clone https://github.com/edwinschi/weegodesafio2.git
+2. npm install
+3. node index.js
+4. acessar http://localhost:3000/

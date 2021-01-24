@@ -62,7 +62,7 @@ porcentagem de resultados = 0.6
 
 se a porcentagem de vitorias for maior que 0.5 utilizamos a porcentagem de vitórias do palmeiras (0.4)
 
-grau de rivalide = 0.4*2;
+grau de rivalide = 0.4*2
 grau de rivaldiade = 0.8 ou 80%
 
 Ou seja , quanto mais proximo de 50% de pontos para cada time , maior o grau de rivalidade.
@@ -71,6 +71,7 @@ Porém como o grau de rivalidade entre times é algo subjetivo , adiconei a poss
 
 Exemplo de configuração:
 
+```json
 configuracoes = {
     peso_adicional: {
         rodadas: {
@@ -82,6 +83,7 @@ configuracoes = {
         }
     }
 }
+```
 
 nesse exemplo, jogos que são finais terao um peso adicionar de 1.5 , totalizando 2.5 (1 da vitoria + 1.5) pontos no calculo, 2 para a semifinal e para jogos da libertarores 11 pontos.
 

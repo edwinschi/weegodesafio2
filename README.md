@@ -24,10 +24,13 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#tech">Tecnologias Utilizadas</a>      
+    </li>
+    <li>
+      <a href="#getting-started">Iniciando</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#prerequisites">Pre-Rquisitos</a></li>
+        <li><a href="#installation">Instação</a></li>
       </ul>
     </li>
   </ol>
@@ -105,6 +108,14 @@ Os dados obtidos para os testes nesse desafio foram obtidos do site:
 Para obter os dados que eram em tabela html em um formato em json com uma estrutura para realizar os cálculos, criei um algoritimo em jQuery (utilizado pelo site).
 
    código em /server/CrawlerCode.js
+
+## Tech
+
+- NodeJS (Algoritimo e código backend)
+- ExpressJS (Para servir os dados para o frontend)
+- Bootstrap4 (Para criar rapidamente a estrutura html do frontend)
+- Google Chart para geração dos gráficos
+- Axios para realizar as requisições HTTP para obter dados cálculados
 
 <!-- GETTING STARTED -->
 ## Getting Started

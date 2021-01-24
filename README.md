@@ -99,7 +99,7 @@ Nesse exemplo, jogos que são finais terao um peso adicionar de 1.5 , totalizand
 
 Algoritimo de cálculos: /server/GrauRivalidade.js
 
-## Origem Dados
+## Origem dos Dados
 
 Os dados obtidos para os testes nesse desafio foram obtidos do site:
 
@@ -109,7 +109,7 @@ Para obter os dados que eram em tabela html em um formato em json com uma estrut
 
    código em /server/CrawlerCode.js
 
-## Tech
+## Tecnologias
 
 - NodeJS (Algoritimo e código backend)
 - ExpressJS (Para servir os dados para o frontend)
@@ -118,14 +118,14 @@ Para obter os dados que eram em tabela html em um formato em json com uma estrut
 - Axios para realizar as requisições HTTP para obter dados cálculados
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Iniciando
 
-### Prerequisites
+### Pré Requisitos
 
 1. Node (v12.18.3)
 2. Npm (6.14.6)
 
-### Installation
+### Instalação
 
 1. git clone https://github.com/edwinschi/weegodesafio2.git
 2. npm install

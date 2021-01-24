@@ -97,7 +97,7 @@ configuracoes = {
 
 Nesse exemplo, jogos que são finais terao um peso adicionar de 1.5 , totalizando 2.5 (1 da vitoria + 1.5) pontos no calculo, 2 para a semifinal e para jogos da libertarores 11 pontos.
 
-Algoritimo de cálculos: /server/GrauRivalidade.js
+Algoritimo de cálculos: /src/GrauRivalidade.js
 
 ## Origem dos Dados
 
@@ -107,7 +107,9 @@ Os dados obtidos para os testes nesse desafio foram obtidos do site:
 
 Para obter os dados que eram em tabela html em um formato em json com uma estrutura para realizar os cálculos, criei um algoritimo em jQuery (utilizado pelo site).
 
-   código em /server/CrawlerCode.js
+   código em /src/CrawlerCode.js
+
+   Dados em json: /data/data_cor_x_pal.json e /data/data_cor_x_san.json
 
 ## Tecnologias
 

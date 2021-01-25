@@ -29,7 +29,7 @@
     <li>
       <a href="#iniciando">Iniciando</a>
       <ul>
-        <li><a href="#pré-requisitos">Pre-Rquisitos</a></li>
+        <li><a href="#pré-requisitos">Pre-Requisitos</a></li>
         <li><a href="#instalação">Instalação</a></li>
       </ul>
     </li>

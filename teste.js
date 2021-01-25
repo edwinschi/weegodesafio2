@@ -5,11 +5,11 @@ var GrauRivalidade = require("./src/GrauRivalidade");
 const configuracoes = {
     peso_adicional:{
         rodadas:{
-            "F":0,
-            "SF":0
+            "F":1,
+            "SF":1.5
         },
         campeonatos:{
-            "brasileirão":0
+            "libertadores":10
         }
     }
 }

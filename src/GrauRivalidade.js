@@ -75,7 +75,7 @@ module.exports = class GrauRivalidade {
     
         //Grau de rivalidade 1 dá-se quando ambos os times estão com 50% de vitória
         let porcetagem_resultados = pontos/(total_pontos); // calcula a porcentagem de vitorias do corinthians
-        if(porcetagem_resultados > 0.5){ //se o corintians possui > 50% de vitorias usar as vitorias do outro time como base de calculo para não termos grau de rivlidade > 1
+        if(porcetagem_resultados > 0.5){ //se o corinthians possui > 50% de vitorias usar as vitorias do outro time como base de calculo para não termos grau de rivlidade > 1
             porcetagem_resultados = 1-porcetagem_resultados;
         }
     

@@ -7,7 +7,6 @@ const path = require('path');
 const GrauRivalidade = require("./src/GrauRivalidade");
 
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use(express.urlencoded());
 app.use(express.json()); 
 
 app.get('/', (req, res) => {
@@ -42,5 +41,5 @@ app.get('/get-log/:file(*)', function(req, res, next){
   
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`App rodando em http://localhost:${port}`)
 })

@@ -1,6 +1,6 @@
 //#https://www.ogol.com.br/xray.php?equipa_id=2234&equipa_vs_equipa_id=2248&id_comp=0&ond=&grp=1&epoca_ini=0&page=1 cor x pal
 
-//O site usa jQuery então via console consigo obter apenas os dados necessários para a análise de rivalidade.
+//O site usa jQuery então via console consigo obter apenas os dados necessários para a análise de rivalidade e converte-los em JSON.
 let rows = [];
 
 $(".zztable.stats").last().find("tbody").find("tr").each((index,tr)=>{

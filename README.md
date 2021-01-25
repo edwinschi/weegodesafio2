@@ -129,7 +129,18 @@ Para obter os dados que eram em tabela html em um formato em json com uma estrut
 
 ### Instalação
 
+
+
 1. git clone https://github.com/edwinschi/weegodesafio2.git
 2. npm install
+
+Teste visual:
+
 3. node index.js
 4. acessar http://localhost:3000/
+
+Teste apenas com console:
+
+3. node teste.js
+
+

@@ -20,17 +20,17 @@
         </ul>
       </ul>
       <ul>
-        <a href="#origem-dados">Origem dos dados</a>
+        <a href="#origem-dos-dados">Origem dos dados</a>
       </ul>
     </li>
     <li>
-      <a href="#tech">Tecnologias Utilizadas</a>      
+      <a href="#tecnologias">Tecnologias Utilizadas</a>      
     </li>
     <li>
-      <a href="#getting-started">Iniciando</a>
+      <a href="#iniciando">Iniciando</a>
       <ul>
-        <li><a href="#prerequisites">Pre-Rquisitos</a></li>
-        <li><a href="#installation">Instação</a></li>
+        <li><a href="#pre-requisitos">Pre-Rquisitos</a></li>
+        <li><a href="#instação">Instação</a></li>
       </ul>
     </li>
   </ol>

@@ -1,7 +1,7 @@
 var fs = require('fs');
 
-var GrauRivalidade = require("./server/GrauRivalidade");
-
+var GrauRivalidade = require("./src/GrauRivalidade");
+/*
 const configuracoes = {
     peso_adicional:{
         rodadas:{
@@ -13,6 +13,7 @@ const configuracoes = {
         }
     }
 }
+*/
 
 let raw_data_cor_x_pal = fs.readFileSync('./data/data_cor_x_pal.json');
 let data_cor_x_pal = JSON.parse(raw_data_cor_x_pal);

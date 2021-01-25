@@ -27,7 +27,7 @@ app.post('/get-grau-rivalidade', (req, res) => {
     res.json({ resultado, log: grauObj.getLog(), titulo });
 })
 
-app.get('/get-log/:file(*)', function(req, res, next){
+app.get('/get-log/:file', function(req, res, next){
     var filePath = path.join(__dirname, 'logs', req.params.file);
   
     res.download(filePath, function (err) {

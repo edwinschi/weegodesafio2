@@ -59,7 +59,7 @@ async function getDados() {
         {
             dados_cor_x_pal: dados_cor_x_pal_config1.data,
             dados_cor_x_san: dados_cor_x_san_config1.data,
-            titulo:'Análise do grau de rivalidade (Finais peso adicional 1.5 e Seminais pesoa adicional 1)',
+            titulo:'Análise do grau de rivalidade (Finais peso adicional 1.5 e Semi-finais peso adicional 1)',
             color:'#81c784'
         },
         {
@@ -78,7 +78,7 @@ getDados().then((_dados) => {
     _dados.forEach((dados,index)=>{
         console.log(dados);
         console.log(index);
-        document.getElementById("logs"+index).innerHTML = "<a href='/get-log/" + dados.dados_cor_x_pal.log + "'>Log Corinthians x Palmeiras</a><br /><a href='/getlog/" + dados.dados_cor_x_san.log + "'>Log Corinthians x Santos</a>"
+        document.getElementById("logs"+index).innerHTML = "<a href='/get-log/" + dados.dados_cor_x_pal.log + "'>Log Corinthians x Palmeiras</a><br /><a href='/get-log/" + dados.dados_cor_x_san.log + "'>Log Corinthians x Santos</a>"
         const drawChart = () => {
 
             // Create the data table.
